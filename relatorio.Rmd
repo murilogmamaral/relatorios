@@ -1,0 +1,66 @@
+---
+output:
+  word_document:
+    reference_docx: modelo.docx
+---
+
+```{css, echo=FALSE}
+pre { border: 0; }
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+```
+
+```{r, echo=FALSE}
+
+car <- rownames(df)
+
+mpg <- df$mpg	# Miles/(US) gallon
+cyl <- df$cyl	# Number of cylinders
+disp <- df$disp	# Displacement (cu.in.)
+hp <- df$hp	# Gross horsepower
+drat <- df$drat	# Rear axle ratio
+wt <- paste(df$wt*1000,"lbs")	# Weight (1000 lbs)
+qsec <- df$qsec #	1/4 mile time
+vs <- ifelse(df$vs==0,"V-shaped","straight") # Engine (0 = V-shaped, 1 = straight)
+am <- ifelse(df$am==0,"automatic","manual")	# Transmission (0 = automatic, 1 = manual)
+gear <- df$gear	# Number of forward gears
+carb <- df$carb	# Number of carburetors
+```
+### `r car`  
+<br>  
+The `r car` has the following characteristics:  
+<br>  
+**Miles/(US) gallon:** `r mpg`;
+<br>  
+<br>  
+**Number of cylinders:** `r cyl`;
+<br>  
+<br>  
+**Displacement:** `r disp` inch³;
+<br>  
+<br>  
+**Gross horsepower:** `r hp`;
+<br>  
+<br>  
+**Rear axle ratio:** `r drat`;
+<br>  
+<br>  
+**Weight:** `r wt`;
+<br>  
+<br>  
+**1/4 mile time:** `r qsec`;
+<br>  
+<br>  
+**Engine:** `r vs`;
+<br>  
+<br>  
+**Transmission:** `r am`;
+<br>  
+<br>  
+**Number of forward gears:** `r gear`;
+<br>  
+<br>  
+**Number of carburetors:** `r carb`.
+<br>  
+<br>  
